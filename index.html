@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Sharper Barbearia — Sistema Completo de Gestão e Agendamento</title>
+    <meta name="description" content="Sistema completo de gestão, agendamento e automação para a Studio Sharper Barbearia. Site próprio, ChatBot WhatsApp, painel financeiro e muito mais.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ====== NAVBAR ====== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="studioharper-logo-transparent.png" alt="Studio Sharper Barbearia" class="nav-logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#simulacoes">Simulações</a></li>
+                <li><a href="#painel">Painel</a></li>
+                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="#proposta" class="nav-cta-link">Proposta</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ====== HERO SECTION ====== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            <div class="hero-logo-wrapper" data-animate="fade-up">
+                <img src="studioharper-logo-transparent.png" alt="Studio Sharper Barbearia" class="hero-logo">
+            </div>
+            <h1 class="hero-title" data-animate="fade-up" data-delay="200">
+                O seu site próprio com sua marca.<br>
+                <span class="hero-highlight">Um sistema que trabalha 24h por você.</span>
+            </h1>
+            <p class="hero-subtitle" data-animate="fade-up" data-delay="400">
+                Tenha um ecossistema exclusivo e completo: site profissional com a sua identidade, agendamento online, 
+                ChatBot inteligente no WhatsApp, painel financeiro e muito mais — tudo integrado em uma única plataforma feita sob medida para a <strong>Studio Sharper</strong>.
+            </p>
+            <div class="hero-cta-group" data-animate="fade-up" data-delay="600">
+                <a href="#proposta" class="btn btn-primary btn-lg">
+                    <span class="btn-icon">🚀</span> Ver Proposta Completa
+                </a>
+                <a href="#simulacoes" class="btn btn-outline btn-lg">
+                    <span class="btn-icon">▶</span> Ver Demonstrações
+                </a>
+            </div>
+            <div class="hero-badges" data-animate="fade-up" data-delay="800">
+                <div class="badge"><span class="badge-icon">🌐</span> Site Próprio</div>
+                <div class="badge"><span class="badge-icon">🤖</span> Bot WhatsApp</div>
+                <div class="badge"><span class="badge-icon">📊</span> Painel Completo</div>
+                <div class="badge"><span class="badge-icon">⏰</span> 24h Automatizado</div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Rolar para baixo</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ====== SIMULAÇÕES SECTION ====== -->
+    <section class="section section-dark" id="simulacoes">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Demonstrações Interativas</span>
+                <h2 class="section-title">Veja o Sistema em Ação</h2>
+                <p class="section-desc">Experimente como será a experiência dos seus clientes e o poder do seu novo sistema.</p>
+            </div>
+
+            <div class="simulations-grid">
+                <!-- ====== SIMULAÇÃO 1: AGENDAMENTO WEB ====== -->
+                <div class="sim-card" data-animate="fade-up" data-delay="100">
+                    <div class="sim-card-header">
+                        <div class="sim-card-icon">🌐</div>
+                        <h3>Agendamento pelo Site</h3>
+                        <p>Seu cliente agenda direto pelo seu site profissional — sem precisar ligar ou mandar mensagem.</p>
+                    </div>
+                    <div class="sim-browser-frame">
+                        <div class="browser-bar">
+                            <div class="browser-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="browser-url">
+                                <span class="lock-icon">🔒</span> www.studiosharper.com.br/agendar
+                            </div>
+                        </div>
+                        <div class="browser-content" id="bookingSimulation">
+                            <!-- Header do site mockado -->
+                            <div class="mock-site-header">
+                                <img src="studioharper-logo-transparent.png" alt="Logo" class="mock-logo">
+                                <span class="mock-site-name">Studio Sharper</span>
+                            </div>
+                            
+                            <!-- Step 1: Escolher Serviço -->
+                            <div class="booking-step" id="bookingStep1">
+                                <h4 class="booking-step-title">Escolha o Serviço</h4>
+                                <div class="services-list">
+                                    <button class="service-item" data-service="Corte Masculino" data-price="45">
+                                        <span class="service-icon">✂️</span>
+                                        <div class="service-info">
+                                            <span class="service-name">Corte Masculino</span>
+                                            <span class="service-price">R$ 45,00</span>
+                                        </div>
+                                        <span class="service-duration">30 min</span>
+                                    </button>
+                                    <button class="service-item" data-service="Barba Completa" data-price="35">
+                                        <span class="service-icon">🧔</span>
+                                        <div class="service-info">
+                                            <span class="service-name">Barba Completa</span>
+                                            <span class="service-price">R$ 35,00</span>
+                                        </div>
+                                        <span class="service-duration">25 min</span>
+                                    </button>
+                                    <button class="service-item" data-service="Corte + Barba" data-price="70">
+                                        <span class="service-icon">💈</span>
+                                        <div class="service-info">
+                                            <span class="service-name">Corte + Barba</span>
+                                            <span class="service-price">R$ 70,00</span>
+                                        </div>
+                                        <span class="service-duration">50 min</span>
+                                    </button>
+                                    <button class="service-item" data-service="Pigmentação" data-price="55">
+                                        <span class="service-icon">🎨</span>
+                                        <div class="service-info">
+                                            <span class="service-name">Pigmentação</span>
+                                            <span class="service-price">R$ 55,00</span>
+                                        </div>
+                                        <span class="service-duration">40 min</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Escolher Horário -->
+                            <div class="booking-step hidden" id="bookingStep2">
+                                <button class="booking-back" id="backToStep1">← Voltar</button>
+                                <h4 class="booking-step-title">Escolha o Horário</h4>
+                                <p class="booking-selected-service" id="selectedServiceText"></p>
+                                <div class="date-selector">
+                                    <span class="date-label">📅 Hoje — <span id="todayDate"></span></span>
+                                </div>
+                                <div class="time-slots" id="timeSlots">
+                                    <button class="time-slot" data-time="09:00">09:00</button>
+                                    <button class="time-slot" data-time="09:30">09:30</button>
+                                    <button class="time-slot unavailable" data-time="10:00">10:00</button>
+                                    <button class="time-slot" data-time="10:30">10:30</button>
+                                    <button class="time-slot" data-time="11:00">11:00</button>
+                                    <button class="time-slot unavailable" data-time="11:30">11:30</button>
+                                    <button class="time-slot" data-time="14:00">14:00</button>
+                                    <button class="time-slot" data-time="14:30">14:30</button>
+                                    <button class="time-slot" data-time="15:00">15:00</button>
+                                    <button class="time-slot unavailable" data-time="15:30">15:30</button>
+                                    <button class="time-slot" data-time="16:00">16:00</button>
+                                    <button class="time-slot" data-time="16:30">16:30</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Confirmação -->
+                            <div class="booking-step hidden" id="bookingStep3">
+                                <div class="booking-success">
+                                    <div class="success-checkmark">
+                                        <div class="check-icon">✓</div>
+                                    </div>
+                                    <h4>Agendamento Confirmado!</h4>
+                                    <p class="success-details" id="successDetails"></p>
+                                    <div class="success-info">
+                                        <p>📩 Confirmação enviada por WhatsApp</p>
+                                        <p>⏰ Lembrete automático 1h antes</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-mock" id="resetBooking">Testar Novamente</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ====== SIMULAÇÃO 2: BOT WHATSAPP ====== -->
+                <div class="sim-card" data-animate="fade-up" data-delay="300">
+                    <div class="sim-card-header">
+                        <div class="sim-card-icon">🤖</div>
+                        <h3>Bot WhatsApp Inteligente</h3>
+                        <p>Atendimento automático 24 horas. Seu cliente agenda sem esperar — mesmo de madrugada.</p>
+                    </div>
+                    <div class="phone-frame">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="whatsapp-header">
+                                <div class="wa-back">←</div>
+                                <div class="wa-avatar">
+                                    <img src="studioharper-logo-transparent.png" alt="Bot" class="wa-avatar-img">
+                                </div>
+                                <div class="wa-contact">
+                                    <span class="wa-name">Studio Sharper Bot</span>
+                                    <span class="wa-status">online</span>
+                                </div>
+                                <div class="wa-icons">📞 📎</div>
+                            </div>
+                            <div class="whatsapp-chat" id="whatsappChat">
+                                <div class="chat-date-divider">Hoje</div>
+                            </div>
+                            <div class="whatsapp-input">
+                                <div class="wa-input-field">
+                                    <span class="wa-emoji">😊</span>
+                                    <span class="wa-placeholder">Mensagem</span>
+                                </div>
+                                <div class="wa-send-btn" id="startChatBtn">
+                                    <span>▶</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-sm btn-mock" id="restartChat" style="margin-top: 1rem;">
+                        🔄 Reiniciar Conversa
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PAINEL DO BARBEIRO ====== -->
+    <section class="section section-gradient" id="painel">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Painel Administrativo</span>
+                <h2 class="section-title">Controle Total na Palma da Sua Mão</h2>
+                <p class="section-desc">Gerencie metas, finanças, clientes e estoque — tudo em um só lugar.</p>
+            </div>
+
+            <div class="panel-demo" data-animate="fade-up" data-delay="200">
+                <div class="panel-tabs">
+                    <button class="panel-tab active" data-tab="metas">
+                        <span class="tab-icon">🎯</span>
+                        <span class="tab-label">Metas do Mês</span>
+                    </button>
+                    <button class="panel-tab" data-tab="financeiro">
+                        <span class="tab-icon">💰</span>
+                        <span class="tab-label">Financeiro</span>
+                    </button>
+                    <button class="panel-tab" data-tab="retencao">
+                        <span class="tab-icon">🔔</span>
+                        <span class="tab-label">Retenção</span>
+                    </button>
+                    <button class="panel-tab" data-tab="vitrine">
+                        <span class="tab-icon">🏪</span>
+                        <span class="tab-label">Vitrine & Equipe</span>
+                    </button>
+                </div>
+
+                <div class="panel-content">
+                    <!-- ABA 1: METAS -->
+                    <div class="tab-panel active" id="tab-metas">
+                        <div class="metas-layout">
+                            <div class="meta-main-card">
+                                <div class="meta-header-info">
+                                    <span class="meta-month">Agosto 2026</span>
+                                    <span class="meta-status-badge pulse">🔥 Em andamento</span>
+                                </div>
+                                <h3 class="meta-question">Quanto falta para a meta do mês?</h3>
+                                <div class="meta-circular-container">
+                                    <div class="circular-progress" id="circularProgress" data-value="75">
+                                        <svg viewBox="0 0 200 200">
+                                            <circle class="progress-bg" cx="100" cy="100" r="85"></circle>
+                                            <circle class="progress-fill" cx="100" cy="100" r="85" id="progressCircle"></circle>
+                                        </svg>
+                                        <div class="circular-inner">
+                                            <span class="circular-percent" id="metaPercent">0%</span>
+                                            <span class="circular-label">concluído</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="meta-values">
+                                    <div class="meta-value-item">
+                                        <span class="meta-value-label">Faturado</span>
+                                        <span class="meta-value-number highlight" id="metaAtual">R$ 0</span>
+                                    </div>
+                                    <div class="meta-value-divider"></div>
+                                    <div class="meta-value-item">
+                                        <span class="meta-value-label">Meta</span>
+                                        <span class="meta-value-number">R$ 20.000</span>
+                                    </div>
+                                </div>
+                                <div class="meta-bar-container">
+                                    <div class="meta-bar">
+                                        <div class="meta-bar-fill" id="metaBarFill"></div>
+                                    </div>
+                                    <span class="meta-bar-text">Faltam <strong id="metaFaltam">R$ 5.000</strong> para bater a meta! 💪</span>
+                                </div>
+                            </div>
+                            <div class="meta-side-cards">
+                                <div class="meta-mini-card">
+                                    <span class="mini-card-icon">📅</span>
+                                    <div class="mini-card-info">
+                                        <span class="mini-card-value">142</span>
+                                        <span class="mini-card-label">Atendimentos no Mês</span>
+                                    </div>
+                                </div>
+                                <div class="meta-mini-card">
+                                    <span class="mini-card-icon">⭐</span>
+                                    <div class="mini-card-info">
+                                        <span class="mini-card-value">4.9</span>
+                                        <span class="mini-card-label">Avaliação Média</span>
+                                    </div>
+                                </div>
+                                <div class="meta-mini-card">
+                                    <span class="mini-card-icon">👤</span>
+                                    <div class="mini-card-info">
+                                        <span class="mini-card-value">23</span>
+                                        <span class="mini-card-label">Novos Clientes</span>
+                                    </div>
+                                </div>
+                                <div class="meta-mini-card">
+                                    <span class="mini-card-icon">🔥</span>
+                                    <div class="mini-card-info">
+                                        <span class="mini-card-value">87%</span>
+                                        <span class="mini-card-label">Taxa de Retorno</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ABA 2: FINANCEIRO -->
+                    <div class="tab-panel" id="tab-financeiro">
+                        <div class="financeiro-layout">
+                            <div class="fin-summary-row">
+                                <div class="fin-card green">
+                                    <span class="fin-card-icon">📈</span>
+                                    <span class="fin-card-label">Entradas</span>
+                                    <span class="fin-card-value">R$ 15.420,00</span>
+                                    <span class="fin-card-change positive">+12% vs mês anterior</span>
+                                </div>
+                                <div class="fin-card red">
+                                    <span class="fin-card-icon">📉</span>
+                                    <span class="fin-card-label">Saídas</span>
+                                    <span class="fin-card-value">R$ 4.380,00</span>
+                                    <span class="fin-card-change negative">-3% vs mês anterior</span>
+                                </div>
+                                <div class="fin-card gold">
+                                    <span class="fin-card-icon">💎</span>
+                                    <span class="fin-card-label">Lucro Líquido</span>
+                                    <span class="fin-card-value">R$ 11.040,00</span>
+                                    <span class="fin-card-change positive">+18% vs mês anterior</span>
+                                </div>
+                            </div>
+                            <div class="fin-chart-area">
+                                <h4 class="fin-chart-title">Faturamento — Últimos 6 Meses</h4>
+                                <div class="fin-bar-chart">
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar" data-height="55"><span class="chart-bar-label">Mar</span></div>
+                                    </div>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar" data-height="68"><span class="chart-bar-label">Abr</span></div>
+                                    </div>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar" data-height="62"><span class="chart-bar-label">Mai</span></div>
+                                    </div>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar" data-height="78"><span class="chart-bar-label">Jun</span></div>
+                                    </div>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar" data-height="85"><span class="chart-bar-label">Jul</span></div>
+                                    </div>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar highlight-bar" data-height="92"><span class="chart-bar-label">Ago</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fin-reports">
+                                <h4>📊 Relatórios Avançados</h4>
+                                <div class="report-links">
+                                    <a href="#" class="report-link">📄 Fluxo de Caixa Detalhado</a>
+                                    <a href="#" class="report-link">📄 Relatório por Barbeiro</a>
+                                    <a href="#" class="report-link">📄 Serviços Mais Lucrativos</a>
+                                    <a href="#" class="report-link">📄 Clientes Frequentes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ABA 3: RETENÇÃO -->
+                    <div class="tab-panel" id="tab-retencao">
+                        <div class="retencao-layout">
+                            <div class="retencao-automations">
+                                <h4>🔔 Automações Ativas</h4>
+                                <div class="automation-list">
+                                    <div class="automation-item">
+                                        <div class="automation-icon whatsapp-auto">💬</div>
+                                        <div class="automation-info">
+                                            <span class="automation-name">Lembrete de Agendamento</span>
+                                            <span class="automation-desc">WhatsApp automático 1h antes do horário</span>
+                                        </div>
+                                        <span class="automation-status active">Ativo</span>
+                                    </div>
+                                    <div class="automation-item">
+                                        <div class="automation-icon email-auto">📧</div>
+                                        <div class="automation-info">
+                                            <span class="automation-name">E-mail de Retorno</span>
+                                            <span class="automation-desc">E-mail automático após 30 dias sem visita</span>
+                                        </div>
+                                        <span class="automation-status active">Ativo</span>
+                                    </div>
+                                    <div class="automation-item">
+                                        <div class="automation-icon whatsapp-auto">💬</div>
+                                        <div class="automation-info">
+                                            <span class="automation-name">Aniversariante do Dia</span>
+                                            <span class="automation-desc">Mensagem automática com cupom de desconto</span>
+                                        </div>
+                                        <span class="automation-status active">Ativo</span>
+                                    </div>
+                                    <div class="automation-item">
+                                        <div class="automation-icon email-auto">📧</div>
+                                        <div class="automation-info">
+                                            <span class="automation-name">Confirmação de Agendamento</span>
+                                            <span class="automation-desc">E-mail com detalhes do serviço agendado</span>
+                                        </div>
+                                        <span class="automation-status active">Ativo</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="retencao-packages">
+                                <h4>💎 Pacotes & Assinaturas VIP</h4>
+                                <div class="package-list">
+                                    <div class="package-card">
+                                        <span class="package-badge">Popular</span>
+                                        <h5>Plano Mensal</h5>
+                                        <p class="package-price">R$ 120<span>/mês</span></p>
+                                        <ul class="package-features">
+                                            <li>✅ 4 cortes por mês</li>
+                                            <li>✅ 2 barbas grátis</li>
+                                            <li>✅ Prioridade na agenda</li>
+                                        </ul>
+                                        <span class="package-clients">👥 18 assinantes ativos</span>
+                                    </div>
+                                    <div class="package-card featured">
+                                        <span class="package-badge">VIP</span>
+                                        <h5>Plano Trimestral</h5>
+                                        <p class="package-price">R$ 299<span>/trimestre</span></p>
+                                        <ul class="package-features">
+                                            <li>✅ Cortes ilimitados</li>
+                                            <li>✅ Barba ilimitada</li>
+                                            <li>✅ Produtos com 20% OFF</li>
+                                            <li>✅ Atendimento prioritário</li>
+                                        </ul>
+                                        <span class="package-clients">👥 7 assinantes ativos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ABA 4: VITRINE & EQUIPE -->
+                    <div class="tab-panel" id="tab-vitrine">
+                        <div class="vitrine-layout">
+                            <div class="vitrine-products">
+                                <h4>🏪 Vitrine de Produtos</h4>
+                                <div class="products-grid">
+                                    <div class="product-card">
+                                        <div class="product-img-placeholder">🧴</div>
+                                        <h5>Pomada Modeladora</h5>
+                                        <p class="product-price">R$ 45,00</p>
+                                        <div class="product-stock">
+                                            <span class="stock-dot in-stock"></span> 24 em estoque
+                                        </div>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-img-placeholder">🪒</div>
+                                        <h5>Óleo para Barba</h5>
+                                        <p class="product-price">R$ 38,00</p>
+                                        <div class="product-stock">
+                                            <span class="stock-dot in-stock"></span> 15 em estoque
+                                        </div>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-img-placeholder">💆</div>
+                                        <h5>Shampoo Premium</h5>
+                                        <p class="product-price">R$ 52,00</p>
+                                        <div class="product-stock">
+                                            <span class="stock-dot low-stock"></span> 3 em estoque
+                                        </div>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-img-placeholder">✨</div>
+                                        <h5>Cera Capilar</h5>
+                                        <p class="product-price">R$ 35,00</p>
+                                        <div class="product-stock">
+                                            <span class="stock-dot in-stock"></span> 12 em estoque
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vitrine-team">
+                                <h4>👥 Gestão de Equipe — Sem Limites</h4>
+                                <p class="team-subtitle">Adicione quantos profissionais quiser em uma mesma agenda. Sem taxas extras.</p>
+                                <div class="team-list">
+                                    <div class="team-member">
+                                        <div class="member-avatar">RS</div>
+                                        <div class="member-info">
+                                            <span class="member-name">Rafael Silva</span>
+                                            <span class="member-role">Barbeiro Master</span>
+                                        </div>
+                                        <span class="member-agenda active">📅 12 agendamentos hoje</span>
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="member-avatar">LC</div>
+                                        <div class="member-info">
+                                            <span class="member-name">Lucas Costa</span>
+                                            <span class="member-role">Barbeiro</span>
+                                        </div>
+                                        <span class="member-agenda active">📅 9 agendamentos hoje</span>
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="member-avatar">MA</div>
+                                        <div class="member-info">
+                                            <span class="member-name">Miguel Alves</span>
+                                            <span class="member-role">Barbeiro</span>
+                                        </div>
+                                        <span class="member-agenda active">📅 8 agendamentos hoje</span>
+                                    </div>
+                                    <div class="team-member add-member">
+                                        <div class="member-avatar">+</div>
+                                        <div class="member-info">
+                                            <span class="member-name">Adicionar Barbeiro</span>
+                                            <span class="member-role">Sem limite de funcionários</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== QUEM SOMOS ====== -->
+    <section class="section section-light" id="quem-somos">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Quem Está por Trás</span>
+                <h2 class="section-title">Autoridade e Experiência</h2>
+            </div>
+            <div class="about-card" data-animate="fade-up" data-delay="200">
+                <div class="about-badge-wrapper">
+                    <div class="about-badge">
+                        <span class="about-badge-icon">⚙️</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h3 class="about-company">Mork Development Technology</h3>
+                    <p class="about-text">
+                        Uma equipe profissional com <strong>mais de 5 anos de experiência</strong>, totalmente focada em trazer 
+                        <strong>resultados reais</strong> para seus clientes. Desenvolvemos sistemas completos de gestão, 
+                        automação e presença digital para negócios que querem crescer de verdade.
+                    </p>
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Anos de Experiência</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projetos Entregues</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Foco em Resultado</span>
+                        </div>
+                    </div>
+                    <div class="about-techs">
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">ChatBot AI</span>
+                        <span class="tech-tag">Cloud Hosting</span>
+                        <span class="tech-tag">UI/UX Design</span>
+                        <span class="tech-tag">Automação</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PROPOSTA & PREÇO ====== -->
+    <section class="section section-proposal" id="proposta">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Proposta Exclusiva</span>
+                <h2 class="section-title">Investimento Transparente</h2>
+                <p class="section-desc">Um investimento que se paga sozinho. Sem surpresas, sem letras miúdas.</p>
+            </div>
+
+            <div class="proposal-card" data-animate="fade-up" data-delay="200">
+                <div class="proposal-main">
+                    <div class="proposal-price-block">
+                        <span class="proposal-label">Valor do Investimento</span>
+                        <div class="proposal-price">
+                            <span class="price-currency">R$</span>
+                            <span class="price-amount">5.000</span>
+                        </div>
+                        <span class="proposal-installment">ou <strong>12x de R$ 416,67</strong> sem juros</span>
+                    </div>
+                    <div class="proposal-includes">
+                        <h4>O que está incluso:</h4>
+                        <ul class="includes-list">
+                            <li><span class="check">✅</span> Desenvolvimento completo do sistema de gestão</li>
+                            <li><span class="check">✅</span> Site próprio com a marca Studio Sharper</li>
+                            <li><span class="check">✅</span> Hospedagem e domínio inclusos</li>
+                            <li><span class="check">✅</span> Bot de WhatsApp inteligente (ChatBot)</li>
+                            <li><span class="check">✅</span> Painel financeiro e de metas</li>
+                            <li><span class="check">✅</span> Sistema de agendamento online</li>
+                            <li><span class="check">✅</span> Automações de retenção de clientes</li>
+                            <li><span class="check">✅</span> Vitrine de produtos e controle de estoque</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="proposal-highlight-box">
+                    <div class="highlight-icon">🛡️</div>
+                    <h4>Garantia de Segurança</h4>
+                    <p>Você <strong>SÓ começa a pagar quando o site e o sistema estiverem prontos</strong> para uso. 
+                       Zero risco: se não ficar satisfeito antes do lançamento, você não paga nada.</p>
+                </div>
+
+                <div class="proposal-maintenance">
+                    <div class="maintenance-icon">🔄</div>
+                    <div class="maintenance-info">
+                        <h4>Manutenção Mensal</h4>
+                        <p>Após a conclusão do pagamento inicial, o valor passa a ser apenas:</p>
+                        <div class="maintenance-price">
+                            <span class="maintenance-amount">R$ 160</span><span class="maintenance-period">/mês</span>
+                        </div>
+                        <p class="maintenance-desc">
+                            Cobrindo <strong>todos os custos de servidores, hospedagem do site e manutenção contínua do ChatBot</strong>. 
+                            Sem surpresas. Tudo incluso.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="proposal-cta">
+                    <a href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20proposta%20do%20sistema%20para%20a%20Studio%20Sharper!" class="btn btn-primary btn-xl" target="_blank">
+                        <span class="btn-icon">💬</span> Fechar Negócio pelo WhatsApp
+                    </a>
+                    <p class="cta-note">Resposta garantida em até 2 horas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="studioharper-logo-transparent.png" alt="Studio Sharper" class="footer-logo">
+                    <p>Proposta comercial exclusiva para Studio Sharper Barbearia.</p>
+                </div>
+                <div class="footer-developer">
+                    <p>Desenvolvido com 🧡 por <strong>Mork Development Technology</strong></p>
+                    <p class="footer-year">© 2026 — Todos os direitos reservados</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== FLOATING CTA ====== -->
+    <a href="#proposta" class="floating-cta" id="floatingCta">
+        <span class="floating-cta-pulse"></span>
+        <span class="floating-cta-icon">💰</span>
+        <span class="floating-cta-text">Ver Proposta</span>
+    </a>
+
+    <!-- ====== POPUP OVERLAY ====== -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content" id="popupContent"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
