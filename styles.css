@@ -1888,18 +1888,30 @@ button {
 }
 
 .about-badge {
-    width: 80px;
-    height: 80px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     background: var(--gradient-brown);
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow-md);
+    padding: 1.1rem;
 }
 
 .about-badge-icon {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.about-badge-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: invert(1);
 }
 
 .about-company {
